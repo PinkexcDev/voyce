@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:voyce_app/api/api.dart';
 import 'package:voyce_app/homepage/index.dart';
-import 'package:voyce_app/start_page/firstpage.dart';
 import 'package:voyce_app/start_page/forgot_password.dart';
 import 'package:voyce_app/start_page/verify_number.dart';
 import 'package:voyce_app/style/ensure_visible.dart';
