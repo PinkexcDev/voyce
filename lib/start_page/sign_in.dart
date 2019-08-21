@@ -8,6 +8,7 @@ import 'package:voyce_app/homepage/index.dart';
 import 'package:voyce_app/start_page/forgot_password.dart';
 import 'package:voyce_app/start_page/verify_number.dart';
 import 'package:voyce_app/style/ensure_visible.dart';
+import 'package:voyce_app/style/ensure_visible.dart';
 
 
 class SignIn extends StatefulWidget {
