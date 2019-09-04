@@ -32,9 +32,10 @@ class RaisedGradientButton extends StatelessWidget {
         shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
         color: Colors.transparent,
         child: InkWell(
-          splashColor: Colors.deepOrangeAccent,
+            splashColor: Colors.deepOrangeAccent,
             onTap: onPressed,
             child: Center(
+
               child: child,
             )),
       ),

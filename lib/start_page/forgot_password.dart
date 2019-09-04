@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:voyce_app/api/api.dart';
-import 'package:voyce_app/start_page/sign_in.dart';
-import 'package:voyce_app/start_page/sign_up.dart';
-import 'package:voyce_app/style/ensure_visible.dart';
+import 'package:app_voyce/api/api.dart';
+import 'package:app_voyce/start_page/sign_in.dart';
+import 'package:app_voyce/start_page/sign_up.dart';
+import 'package:app_voyce/style/ensure_visible.dart';
 
 class ForgotPassword extends StatefulWidget {
   @override
@@ -89,20 +89,20 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   // padding: const EdgeInsets.symmetric(horizontal: 16.0),
                                   child: new Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
+                                    CrossAxisAlignment.stretch,
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                    MainAxisAlignment.spaceAround,
                                     children: <Widget>[
                                       new EnsureVisibleWhenFocused(
                                         focusNode: _focusNodeForgotPassword,
                                         child: new TextFormField(
                                             controller:
-                                                forgotPasswordController,
+                                            forgotPasswordController,
                                             validator: (value) {
                                               Pattern pattern =
                                                   r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
                                               RegExp regex =
-                                                  new RegExp(pattern);
+                                              new RegExp(pattern);
                                               if (!regex.hasMatch(value)) {
                                                 return ('Enter Valid Email');
                                               } else {
@@ -114,7 +114,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                                     .withOpacity(0.5),
                                                 fontSize: 14.0),
                                             keyboardType:
-                                                TextInputType.emailAddress,
+                                            TextInputType.emailAddress,
                                             decoration: new InputDecoration(
                                               hintText: 'Enter e-mail',
                                             )),
@@ -168,7 +168,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   new InkWell(
                     child: Text('<< BACK',textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white.withOpacity(0.5),
-                          ),),
+                      ),),
                     onTap: ()=>Navigator.push(
                         context,
                         new MaterialPageRoute(builder: (context) => SignIn())),
@@ -178,11 +178,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     height: 40.0,
                   ),
                   new Text('Don\'t have account?',textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white.withOpacity(0.5),
-                          ),),
+                    style: TextStyle(color: Colors.white.withOpacity(0.5),
+                    ),),
                   Container(
                     height: 10.0,
-                   ),
+                  ),
                   new InkWell(
                     child: Text('Sign Up',textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white.withOpacity(0.5),

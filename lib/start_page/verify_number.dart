@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:country_code_picker/country_code.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:voyce_app/api/api.dart';
-import 'package:voyce_app/start_page/sign_in.dart';
-import 'package:voyce_app/style/ensure_visible.dart';
+import 'package:app_voyce/api/api.dart';
+import 'package:app_voyce/start_page/sign_in.dart';
+import 'package:app_voyce/style/ensure_visible.dart';
 
 class VerifyNumber extends StatefulWidget {
   final int iduser;
@@ -54,13 +54,13 @@ class _VerifyNumberState extends State<VerifyNumber> {
     print(widget.iduser);
 
     var data = {
-     // "id": iduser,
+      // "id": iduser,
       "id": iduser,
       "mobile_number" :VerifyNumberController.text,
       "countryCode" : country.toString(),
     };
 
-   var res = await CallApi().postData(data, 'sendmobile');
+    var res = await CallApi().postData(data, 'sendmobile');
     var body = json.decode(res.body);
 
     if(body['success']){
@@ -93,8 +93,6 @@ class _VerifyNumberState extends State<VerifyNumber> {
   }
 
 
-
-
 //  static final TextEditingController _firstNameController = new TextEditingController();
 //  static final TextEditingController _lastNameController = new TextEditingController();
 //  static final TextEditingController _descriptionController = new TextEditingController();
@@ -104,7 +102,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
     return Container(
       decoration: new BoxDecoration(
         image: new DecorationImage(
-          image:AssetImage('assets/images/Asset 58(1).png'),
+          image: AssetImage('assets/images/Asset 58(1).png'),
           fit: BoxFit.cover,
         ),
       ),
@@ -130,9 +128,9 @@ class _VerifyNumberState extends State<VerifyNumber> {
                   Container( padding: EdgeInsets.only(top: 15.0, left: 15.0),
                     child: new Material(
                       type: MaterialType.transparency,
-                      child: Text('Please verify your number',
+                      child: Text('Verify your Mobile Number',
                         //textAlign: TextAlign,
-                        style: TextStyle(fontSize:40.0, color: Colors.white),
+                        style: TextStyle(fontSize:40.0, color: Colors.white, fontFamily: 'Georgia'),
 
                       ),
                     ),),
@@ -198,6 +196,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
                                                 onTap: () {
                                                   _requestOTP(_selected);
                                                 },
+
                                                 child: new Container(
                                                   width: 130.0,
                                                   height: 30.0,
@@ -219,7 +218,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
                                       const SizedBox(height: 15.0),
                                       const SizedBox(height: 15.0),
                                       const SizedBox(height: 15.0),
-                                      new Text('By creating an account, you agree to the Term of Use and Privacy Policy',
+                                      new Text('By creating an account, you agree to the \n Term of Use and Privacy Policy',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 12.0),
                                       ),
@@ -233,7 +232,6 @@ class _VerifyNumberState extends State<VerifyNumber> {
                         ],
                       ),
                     ),
-
                   ),
                   Container(height: 40.0,),
                   new Material(

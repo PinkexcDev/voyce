@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voyce_app/start_page/firstpage.dart';
+import 'package:app_voyce/start_page/firstpage.dart';
 
 class CategoryFirst extends StatefulWidget {
   @override
@@ -26,7 +26,7 @@ class _CategoryFirstState extends State<CategoryFirst> {
                 width: 90.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/categories/groceries.png",
+                    "assets/images/categories/groceries.jpg",
                     width: 90.0,
                     height: 70.0,),
                   subtitle: new Container(
@@ -44,8 +44,8 @@ class _CategoryFirstState extends State<CategoryFirst> {
                 width: 90.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/categories/polo-shirt.png",
-                    width: 90.0,
+                    "assets/images/categories/tuxedo.png",
+                    width: 60.0,
                     height: 70.0,),
                   subtitle: new Container(
                     alignment: Alignment.topCenter,
@@ -62,9 +62,9 @@ class _CategoryFirstState extends State<CategoryFirst> {
                 width: 90.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/categories/clothing.png",
+                    "assets/images/categories/dress.png",
                     width: 90.0,
-                    height: 70.0,),
+                    height: 65.0,),
                   subtitle: new Container(
                     alignment: Alignment.topCenter,
                     child: Text("Women's Fashion", style: new TextStyle(fontSize: 10.0),textAlign: TextAlign.center,),
@@ -80,7 +80,7 @@ class _CategoryFirstState extends State<CategoryFirst> {
                 width: 90.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/categories/earrings.png",
+                    "assets/images/categories/smartwatch.png",
                     width: 90.0,
                     height: 70.0,),
                   subtitle: new Container(
@@ -121,8 +121,8 @@ class _CategorySecondState extends State<CategorySecond> {
                 width: 90.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/categories/toothbrush.png",
-                    width: 90.0,
+                    "assets/images/categories/health.png",
+                    width: 80.0,
                     height: 70.0,),
                   subtitle: new Container(
                     alignment: Alignment.topCenter,
@@ -139,9 +139,9 @@ class _CategorySecondState extends State<CategorySecond> {
                 width: 90.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/categories/smartphone.png",
-                    width: 90.0,
-                    height: 70.0,),
+                    "assets/images/categories/phone.png",
+                    width: 80.0,
+                    height: 65.0,),
                   subtitle: new Container(
                     alignment: Alignment.topCenter,
                     child: Text("Lifestyle & Gadget", style: new TextStyle(fontSize: 10.0),textAlign: TextAlign.center,),
@@ -176,7 +176,7 @@ class _CategorySecondState extends State<CategorySecond> {
                 child: ListTile(
                   title: Image.asset(
                     "assets/images/categories/statue-of-liberty.png",
-                    width: 90.0,
+                    width: 100.0,
                     height: 70.0,),
                   subtitle: new Container(
                     alignment: Alignment.topCenter,

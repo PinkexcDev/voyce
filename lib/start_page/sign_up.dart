@@ -1,12 +1,11 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:voyce_app/api/api.dart';
-import 'package:voyce_app/start_page/sign_in.dart';
-import 'package:voyce_app/start_page/verify_number.dart';
-import 'package:voyce_app/style/ensure_visible.dart';
+import 'package:app_voyce/api/api.dart';
+import 'package:app_voyce/start_page/sign_in.dart';
+import 'package:app_voyce/start_page/verify_number.dart';
+import 'package:app_voyce/style/ensure_visible.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -64,13 +63,13 @@ class _SignUpState extends State<SignUp> {
         localStorage.setString('user', json.encode(body['user']));
 
         Navigator.push(
-          context,
-          new MaterialPageRoute(builder: (context)=>VerifyNumber(iduser: id))
+            context,
+            new MaterialPageRoute(builder: (context)=>VerifyNumber(iduser: id))
         );
       }
 
       else{
-        showInSnackBar('Please try again');
+        showInSnackBar('ddd');
       }
 
 
@@ -133,12 +132,12 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ],),
                   Container(height: 80.0,),
-                  Container( padding: EdgeInsets.only(top: 15.0),
+                  Container( padding: EdgeInsets.only(top: 1.0, right: 140.0),
                     child: new Material(
                       type: MaterialType.transparency,
                       child: Text('Get on Board',
                         //textAlign: TextAlign,
-                        style: TextStyle(fontSize:40.0, color: Colors.white),
+                        style: TextStyle(fontSize:35.0, color: Colors.white, fontFamily: 'Georgia', fontWeight: FontWeight.bold),
 
                       ),
                     ),),
@@ -168,13 +167,13 @@ class _SignUpState extends State<SignUp> {
                                       new EnsureVisibleWhenFocused(
                                         focusNode: _focusNodeUsername,
                                         child: new TextFormField(
-                                          controller: signupUsernameController,
+                                            controller: signupUsernameController,
                                             onSaved: (String val){
-                                            _username = val;
+                                              _username = val;
                                             },
                                             style:new TextStyle(
                                                 color: Colors.white.withOpacity(0.5),
-                                            fontSize: 14.0),
+                                                fontSize: 14.0),
                                             decoration: new InputDecoration(
                                               hintText: 'Username',
                                             )),
@@ -184,19 +183,19 @@ class _SignUpState extends State<SignUp> {
                                       new EnsureVisibleWhenFocused(
                                         focusNode: _focusNodeEmail,
                                         child: new TextFormField(
-                                          controller: signupEmailController,
-                                          validator: (value){
-                                            Pattern pattern =
-                                                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                                            RegExp regex = new RegExp(pattern);
-                                            if (!regex.hasMatch(value))
-                                             { return ('Enter Valid Email');}
-                                            else
+                                            controller: signupEmailController,
+                                            validator: (value){
+                                              Pattern pattern =
+                                                  r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                                              RegExp regex = new RegExp(pattern);
+                                              if (!regex.hasMatch(value))
+                                              { return ('Enter Valid Email');}
+                                              else
                                               {return null;}
-                                          },
+                                            },
                                             style:new TextStyle(
                                                 color: Colors.white.withOpacity(0.5),
-                                            fontSize: 14.0),
+                                                fontSize: 14.0),
                                             keyboardType: TextInputType.emailAddress,
                                             decoration: new InputDecoration(
                                               hintText: 'E-mail',
@@ -206,13 +205,13 @@ class _SignUpState extends State<SignUp> {
                                       new EnsureVisibleWhenFocused(
                                         focusNode: _focusNodePassword,
                                         child: new TextFormField(
-                                          controller: signupPasswordController,
+                                            controller: signupPasswordController,
                                             focusNode: _focusNodePassword,
                                             obscureText: _obscureTextSignup,
                                             validator: (value){
-                                            if(value.isEmpty) {
-                                              return 'Please enter password';
-                                            }
+                                              if(value.isEmpty) {
+                                                return 'Please enter password';
+                                              }
                                               if(value.length < 8)
                                                 return 'Password must be 8 characters and more';
                                             },
@@ -243,7 +242,7 @@ class _SignUpState extends State<SignUp> {
                                               if(value != signupPasswordController.text){
                                                 return 'Password not match';
                                               }
-                                           },
+                                            },
                                             style:new TextStyle(
                                                 color: Colors.white.withOpacity(0.5),
                                                 fontSize: 14.0),
@@ -261,8 +260,8 @@ class _SignUpState extends State<SignUp> {
                                                 )
                                             )),
                                       ),
-                                      Container(height: 15.0,),
-                                      new Text('By creating an account, you agree to the Term of Use and Privacy Policy',
+                                      Container(height: 20.0,),
+                                      new Text('By creating an account, you agree to the \n Term of Use and Privacy Policy',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 12.0),
                                       ),
@@ -288,7 +287,7 @@ class _SignUpState extends State<SignUp> {
                           context,
                           new MaterialPageRoute(builder: (context) => VerifyNumber()))*/
                       child: new Container(
-                        width: 150.0,
+                        width: 180.0,
                         height: 50.0,
                         decoration: new BoxDecoration(
                           gradient: LinearGradient(

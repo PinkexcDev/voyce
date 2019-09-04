@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voyce_app/homepage/recommended_details.dart';
+import 'package:app_voyce/homepage/recommended_details.dart';
 
 
 class Recommended extends StatefulWidget {
@@ -11,63 +11,73 @@ class _RecommendedState extends State<Recommended> {
   var productList = [
     {
       "name": "Women Bag",
-      "picture": "img/products/womenbag.png",
+      "picture": "assets/images/products/womanbag.png",
       "old price": 120,
-      "price": 85.99
+      "price": 100.00,
+      "country" : "Japan"
     },
     {
-      "name": "Blazzer1",
-      "picture": "img/products/blazer1.jpeg",
+      "name": "Blazzer",
+      "picture": "assets/images/products/blazzer.png",
       "old price": 120,
-      "price": 85
+      "price": 85,
+      "country" : "China"
     },
     {
-      "name": "Blazzer2",
-      "picture": "img/products/blazer2.jpeg",
+      "name": "Polo Shirt",
+      "picture": "assets/images/products/polo_shirt.jpg",
       "old price": 120,
-      "price": 85
+      "price": 85,
+      "country" : "Malaysia"
     },
     {
-      "name": "Red Dress",
-      "picture": "img/products/dress1.jpeg",
+      "name": "Baju Kurung",
+      "picture": "assets/images/products/bajuKurung.jpg",
       "old price": 120,
-      "price": 85
+      "price": 85,
+      "country" : "Australia"
     },
     {
       "name": "Dress",
       "picture": "img/products/dress2.jpeg",
       "old price": 120,
-      "price": 85.99
+      "price": 85.99,
+      "country" : "United States"
     },
     {
       "name": "Hills",
       "picture": "img/products/hills1.jpeg",
       "old price": 120,
-      "price": 85
+      "price": 85,
+      "country" : "Korea"
     },
     {
       "name": "Hills",
       "picture": "img/products/hills2.jpeg",
       "old price": 120,
-      "price": 85
+      "price": 85,
+      "country" : "China"
     },
     {
       "name": "Panet",
       "picture": "img/products/pants2.jpeg",
       "old price": 120,
-      "price": 85
+      "price": 85,
+      "country" : "Malaysia"
     },
     {
       "name": "SKT",
       "picture": "img/products/skt1.jpeg",
       "old price": 120,
-      "price": 85
+      "price": 85,
+      "country" : "Brazil"
     },
     {
       "name": "SKT",
       "picture": "img/products/skt1.jpeg",
       "old price": 120,
-      "price": 85
+      "price": 85,
+      "country" : "Japan"
     },
   ];
 
@@ -83,6 +93,7 @@ class _RecommendedState extends State<Recommended> {
             productPicture: productList[index]['picture'],
             productOldPrice: productList[index]['old price'],
             productPrice: productList[index]['price'],
+            productFrom: productList[index]['country'],
           );
         });
   }
@@ -93,12 +104,14 @@ class Single_Product extends StatelessWidget {
   final productPicture;
   final productOldPrice;
   final productPrice;
+  final productFrom;
 
   Single_Product(
       {this.productName,
         this.productPicture,
         this.productOldPrice,
-        this.productPrice});
+        this.productPrice,
+        this.productFrom});
 
   @override
   Widget build(BuildContext context) {
@@ -135,13 +148,13 @@ class Single_Product extends StatelessWidget {
                 children: <Widget>[
                   Image.asset(
                     productPicture,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.contain,
                     width: MediaQuery.of(context).size.width / 2.25,
                     height: MediaQuery.of(context).size.height / 2,
                   ),
                 ],
               ),
-              flex: 5,
+              flex: 3,
             ),
             Expanded(
               child: Stack(
@@ -151,14 +164,15 @@ class Single_Product extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  subtitle: Row(
+                  subtitle:
+                  Row(
                     children: <Widget>[
                       Expanded(
                         child: Text("\RM $productPrice",
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                             style: TextStyle(
-                                fontWeight: FontWeight.w800, color: Colors.red)),
+                                fontWeight: FontWeight.w800, color: Colors.orangeAccent),
                       ),
 
 //                    Expanded(
@@ -172,17 +186,20 @@ class Single_Product extends StatelessWidget {
 //                            decoration: TextDecoration.lineThrough),
 //                      ),
 //                    ),
+                      ),
                     ],
                   ),
                 ),
                 ],
               ),
-              flex: 2,
+              flex: 1,
             ),
             Expanded(
                 child: ListTile(
-                  title: Text('hahahah'),
+                  title: Text("From $productFrom", style: TextStyle(
+                  fontSize: 13.0),
                 )),
+            ),
           ],
         ),
       ),

@@ -27,7 +27,8 @@ class _RecommendedDetailsState extends State<RecommendedDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.productDetailsName),
+        title: Text(widget.productDetailsName, style: TextStyle(fontFamily: 'Georgia', fontSize: 20),),
+        backgroundColor: Colors.orangeAccent,
       ),
       body: Column(
         children: <Widget>[
@@ -79,7 +80,7 @@ class _RecommendedDetailsState extends State<RecommendedDetails> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                          child: Text("\$${widget.productDetailsNewPrice}",
+                          child: Text("\RM${widget.productDetailsNewPrice}",
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style: TextStyle(
@@ -103,23 +104,23 @@ class _RecommendedDetailsState extends State<RecommendedDetails> {
                             children: <Widget>[
                               Icon(
                                 Icons.star,
-                                color: Colors.pink,
+                                color: Colors.orange,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.pink,
+                                color: Colors.orange,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.pink,
+                                color: Colors.orange,
                               ),
                               Icon(
                                 Icons.star_half,
-                                color: Colors.pink,
+                                color: Colors.orange,
                               ),
                               Icon(
                                 Icons.star_border,
-                                color: Colors.pink,
+                                color: Colors.orange,
                               )
                             ],
                           ),
@@ -209,7 +210,7 @@ class _RecommendedDetailsState extends State<RecommendedDetails> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               gradient: LinearGradient(
-                colors: [Colors.pink, Colors.pinkAccent, Colors.purpleAccent],
+                colors: [Colors.orange, Colors.orangeAccent, Colors.yellow],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -224,7 +225,10 @@ class _RecommendedDetailsState extends State<RecommendedDetails> {
         ],
       ),
     );
+
+
   }
+
 
 //  @override
 //  Widget build(BuildContext context) {

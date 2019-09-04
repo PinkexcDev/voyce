@@ -1,15 +1,13 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:voyce_app/api/api.dart';
-import 'package:voyce_app/homepage/index.dart';
-import 'package:voyce_app/start_page/forgot_password.dart';
-import 'package:voyce_app/start_page/verify_number.dart';
-import 'package:voyce_app/style/ensure_visible.dart';
-import 'package:voyce_app/style/ensure_visible.dart';
-
+import 'package:app_voyce/api/api.dart';
+import 'package:app_voyce/homepage/index.dart';
+import 'package:app_voyce/start_page/sign_up.dart';
+import 'package:app_voyce/start_page/forgot_password.dart';
+import 'package:app_voyce/start_page/verify_number.dart';
+import 'package:app_voyce/style/ensure_visible.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -31,15 +29,13 @@ class _SignInState extends State<SignIn> {
   bool _obscureTextLogin = true;
   bool _autoValidate = false;
 
-  String _username;
+  //String _username;
 
   void _toggleLogin() {
     setState(() {
       _obscureTextLogin = !_obscureTextLogin;
     });
   }
-
-
 
   void _validateInputs() async {
     if (_formKey.currentState.validate()) {
@@ -52,9 +48,8 @@ class _SignInState extends State<SignIn> {
       };
       var res = await CallApi().postData(data, 'signin');
       var body = json.decode(res.body);
-     print(body['success']);
-     int id = body['user']['id'];
-
+      print(body['success']);
+      int id = body['user']['id'];
 
 
       if(body['success']){
@@ -73,7 +68,7 @@ class _SignInState extends State<SignIn> {
           Navigator.push(
               context,
               new MaterialPageRoute(builder: (context) => VerifyNumber(iduser : id))
-             // new MaterialPageRoute(builder: (context) => SignUp())
+            // new MaterialPageRoute(builder: (context) => SignUp())
           );
         }
       }
@@ -106,10 +101,6 @@ class _SignInState extends State<SignIn> {
       duration: Duration(seconds: 3),
     ));
   }
-
-
-
-
 //  static final TextEditingController _firstNameController = new TextEditingController();
 //  static final TextEditingController _lastNameController = new TextEditingController();
 //  static final TextEditingController _descriptionController = new TextEditingController();
@@ -142,12 +133,12 @@ class _SignInState extends State<SignIn> {
                     ),
                   ],),
                   Container(height: 80.0,),
-                  Container( padding: EdgeInsets.only(top: 15.0, left: 15.0),
+                  Container(padding: EdgeInsets.only(top: 10.0, right: 110.0),
                     child: new Material(
                       type: MaterialType.transparency,
-                      child: Text('Hello there, Welcome back',
+                      child: Text('Hello there,\nWelcome back',
                         //textAlign: TextAlign,
-                        style: TextStyle(fontSize:40.0, color: Colors.white),
+                        style: TextStyle(fontSize:35.0, color: Colors.white, fontFamily: 'Georgia', fontWeight: FontWeight.bold),
 
                       ),
                     ),),
@@ -257,13 +248,13 @@ class _SignInState extends State<SignIn> {
                           context,
                           new MaterialPageRoute(builder: (context) => VerifyNumber()))*/
                       child: new Container(
-                        width: 150.0,
+                        width: 180.0,
                         height: 50.0,
                         decoration: new BoxDecoration(
                           gradient: LinearGradient(
                               colors: <Color>[
-                                Color(0xfff09819),
-                                Color(0xffedde5d),
+                                Colors.orangeAccent,
+                                Colors.yellowAccent,
                               ]),
                           // border: new Border.all(color: Colors.white, width: 2.0),
                           borderRadius: new BorderRadius.circular(10.0),
@@ -273,7 +264,8 @@ class _SignInState extends State<SignIn> {
                             style: new TextStyle(
                                 fontSize: 18.0,
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold),),),
+                                fontWeight: FontWeight.bold
+                               ),),),
                       ),
                     ),
                   ),
@@ -282,12 +274,24 @@ class _SignInState extends State<SignIn> {
                     type: MaterialType.transparency,
                     child: new Container(
                       child: InkWell(
-                        child: new Text('New here? Sign Up instead',
-                          style: TextStyle(color: Colors.white70,
-                              decoration: TextDecoration.underline),),
+                        child: Text.rich(
+                          TextSpan(
+                            text: 'New here? ',
+                            style: TextStyle(fontFamily: 'Georgia', fontSize: 16, color:Colors.white70),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: 'Sign Up instead',
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
                         onTap: ()=>Navigator.push(
                             context,
-                            new MaterialPageRoute(builder: (context) => SignIn())),
+                            new MaterialPageRoute(builder: (context) => SignUp())),
                       ),
                     ),
                   ),

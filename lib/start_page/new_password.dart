@@ -1,0 +1,225 @@
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:app_voyce/api/api.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:app_voyce/start_page/sign_in.dart';
+import 'package:app_voyce/style/ensure_visible.dart';
+
+class NewPassword extends StatefulWidget {
+  final int iduser;
+  NewPassword({Key key, this.iduser}) : super(key: key);
+  @override
+  _NewPasswordState createState() => _NewPasswordState();
+}
+
+class _NewPasswordState extends State<NewPassword> {
+  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+  TextEditingController NewPasswordController = new TextEditingController();
+  TextEditingController NewPasswordConfirmController = new TextEditingController();
+
+  FocusNode _focusNodeNewPassword = new FocusNode();
+  FocusNode _focusNodeNewPasswordConfirm = new FocusNode();
+
+  void _resetPassword() async {
+    var iduser = widget.iduser;
+    var data = {
+      "id": iduser,
+      "password": NewPasswordController.text,
+    };
+
+    var res = await CallApi().postData(data, 'password/reset');
+    var body = json.decode(res.body);
+    int id = body['user']['id'];
+    print(body['user']['id']);
+    if (body['success']) {
+      SharedPreferences localStorage = await SharedPreferences.getInstance();
+      localStorage.setString('token', body['token']);
+      localStorage.setString('user', json.encode(body['user']));
+    }
+  }
+
+    @override
+    Widget build(BuildContext context) {
+      return Container(
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+              image: AssetImage('assets/images/Asset 58(1).png'),
+              fit: BoxFit.cover),
+        ),
+        child: Scaffold(
+          key: _scaffoldKey,
+          resizeToAvoidBottomPadding: true,
+          backgroundColor: Colors.transparent,
+          body: Stack(
+            children: <Widget>[
+              SingleChildScrollView(
+                child: new Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        IconButton(
+                            icon: Icon(
+                              Icons.arrow_back_ios,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            }),
+                      ],
+                    ),
+                    Container(
+                      height: 80.0,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(right: 80.0),
+                      child: new Material(
+                        type: MaterialType.transparency,
+                        child: Text(
+                          'Reset Password',
+                          style: TextStyle(fontSize: 40.0,
+                              color: Colors.white,
+                              fontFamily: 'Georgia'),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 100.0,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: Column(
+                          children: <Widget>[
+                            new Theme(
+                              data: new ThemeData(
+                                primaryColor: Colors.blueGrey,
+                                accentColor: Colors.orange,
+                                hintColor: Colors.white70,
+                              ),
+                              child: SingleChildScrollView(
+                                child: new Form(
+                                  key: _formKey,
+                                  child: new SingleChildScrollView(
+                                    // padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                                    child: new Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                      children: <Widget>[
+                                        new EnsureVisibleWhenFocused(
+                                          focusNode: _focusNodeNewPassword,
+                                          child: new TextFormField(
+                                              controller:
+                                              NewPasswordController,
+                                              validator: (value) {
+                                                Pattern pattern =
+                                                    r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                                                RegExp regex =
+                                                new RegExp(pattern);
+                                                if (!regex.hasMatch(value)) {
+                                                  return ('Enter Valid Email');
+                                                } else {
+                                                  return null;
+                                                }
+                                              },
+                                              style: new TextStyle(
+                                                  color: Colors.white
+                                                      .withOpacity(0.5),
+                                                  fontSize: 14.0),
+                                              keyboardType:
+                                              TextInputType.emailAddress,
+                                              decoration: new InputDecoration(
+                                                hintText: 'Enter E-Mail',
+                                              )),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 70.0,
+                    ),
+                    new Material(
+                      color: Colors.transparent,
+                      child: new InkWell(
+                        onTap: _resetPassword,
+                        /*() => Navigator.push(
+                          context,
+                          new MaterialPageRoute(builder: (context) => VerifyNumber()))*/
+                        child: new Container(
+                          width: 200.0,
+                          height: 50.0,
+                          decoration: new BoxDecoration(
+                            gradient: LinearGradient(colors: <Color>[
+                              Color(0xfff09819),
+                              Color(0xffedde5d),
+                            ]),
+
+                            borderRadius: new BorderRadius.circular(10.0),
+                          ),
+                          child: new Center(
+                            child: new Text(
+                              'Reset Password',
+                              style: new TextStyle(
+                                fontSize: 18.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 50.0,
+                    ),
+                    new InkWell(
+                      child: Text('Back', textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white.withOpacity(0.5),
+                        ),),
+                      onTap: () =>
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => SignIn())),
+                    ),
+
+                    Container(
+                      height: 40.0,
+                    ),
+                    new Text(
+                      'Don\'t have account?', textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white.withOpacity(0.5),
+                      ),),
+                    Container(
+                      height: 10.0,
+                    ),
+                    new InkWell(
+                      child: Text('Sign Up', textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white.withOpacity(0.5),
+                            decoration: TextDecoration.underline),),
+//                    onTap: ()=>Navigator.push(
+//                        context,
+//                        new MaterialPageRoute(builder: (context) => SignUp())),
+//                    ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      );
+    }
+  }
+

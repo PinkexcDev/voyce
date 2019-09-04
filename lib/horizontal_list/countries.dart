@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voyce_app/start_page/firstpage.dart';
+import 'package:app_voyce/start_page/firstpage.dart';
 //import 'package:voyce_app/start_page/firstpage.dart';
 
 class CountryOne extends StatefulWidget {
@@ -14,85 +14,85 @@ class _CountryOneState extends State<CountryOne> {
       height: 70.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
-      children: <Widget>[
-        Padding(padding: const EdgeInsets.only(bottom:2.0),
-          child: InkWell(
-            onTap: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => FirstPage()),
-              );
-            },
-            child: Container(
-              width: 70.0,
-              child: ListTile(
-                title: Image.asset(
-                  "assets/images/country/my.png",
-                  width: 30.0,
-                  height: 40.0,),
+        children: <Widget>[
+          Padding(padding: const EdgeInsets.only(bottom:2.0),
+            child: InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FirstPage()),
+                );
+              },
+              child: Container(
+                width: 70.0,
+                child: ListTile(
+                  title: Image.asset(
+                    "assets/images/country/my.png",
+                    width: 30.0,
+                    height: 40.0,),
 
+                ),
               ),
             ),
           ),
-        ),
-        Padding(padding: const EdgeInsets.only(bottom:2.0),
-          child: InkWell(
-            onTap: (){},
-            child: Container(
-              width: 70.0,
-              child: ListTile(
-                title: Image.asset(
-                  "assets/images/country/uk.png",
-                  width: 30.0,
-                  height: 40.0,),
+          Padding(padding: const EdgeInsets.only(bottom:2.0),
+            child: InkWell(
+              onTap: (){},
+              child: Container(
+                width: 70.0,
+                child: ListTile(
+                  title: Image.asset(
+                    "assets/images/country/brazil.png",
+                    width: 30.0,
+                    height: 40.0,),
 
+                ),
               ),
             ),
           ),
-        ),
-        Padding(padding: const EdgeInsets.only(bottom:2.0),
-          child: InkWell(
-            onTap: (){},
-            child: Container(
-              width: 70.0,
-              child: ListTile(
-                title: Image.asset(
-                  "assets/images/country/sg.png",
-                  width: 30.0,
-                  height: 40.0,),
+          Padding(padding: const EdgeInsets.only(bottom:2.0),
+            child: InkWell(
+              onTap: (){},
+              child: Container(
+                width: 70.0,
+                child: ListTile(
+                  title: Image.asset(
+                    "assets/images/country/spain.png",
+                    width: 30.0,
+                    height: 40.0,),
+                ),
               ),
             ),
           ),
-        ),
-        Padding(padding: const EdgeInsets.only(bottom:2.0),
-          child: InkWell(
-            onTap: (){},
-            child: Container(
-              width: 70.0,
-              child: ListTile(
-                title: Image.asset(
-                  "assets/images/country/fr.png",
-                  width: 30.0,
-                  height: 40.0,),
+          Padding(padding: const EdgeInsets.only(bottom:2.0),
+            child: InkWell(
+              onTap: (){},
+              child: Container(
+                width: 70.0,
+                child: ListTile(
+                  title: Image.asset(
+                    "assets/images/country/Thailand.png",
+                    width: 30.0,
+                    height: 40.0,),
+                ),
               ),
             ),
           ),
-        ),
-        Padding(padding: const EdgeInsets.only(bottom:2.0),
-          child: InkWell(
-            onTap: (){},
-            child: Container(
-              width: 70.0,
-              child: ListTile(
-                title: Image.asset(
-                  "assets/images/country/japan.png",
-                  width: 30.0,
-                  height: 40.0,),
+          Padding(padding: const EdgeInsets.only(bottom:2.0),
+            child: InkWell(
+              onTap: (){},
+              child: Container(
+                width: 70.0,
+                child: ListTile(
+                  title: Image.asset(
+                    "assets/images/country/jp.png",
+                    width: 30.0,
+                    height: 40.0,),
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
       ),
     );
   }
@@ -123,7 +123,7 @@ class _CountryTwoState extends State<CountryTwo> {
                 width: 70.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/country/us.png",
+                    "assets/images/country/unitedStates.jpg",
                     width: 30.0,
                     height: 40.0,),
                 ),
@@ -137,7 +137,7 @@ class _CountryTwoState extends State<CountryTwo> {
                 width: 70.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/country/my.png",
+                    "assets/images/country/sg.png",
                     width: 30.0,
                     height: 40.0,),
                 ),
@@ -151,7 +151,7 @@ class _CountryTwoState extends State<CountryTwo> {
                 width: 70.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/country/china.png",
+                    "assets/images/country/korea.png",
                     width: 50.0,
                     height: 50.0,),
                 ),
@@ -165,7 +165,7 @@ class _CountryTwoState extends State<CountryTwo> {
                 width: 70.0,
                 child: ListTile(
                   title: Image.asset(
-                    "assets/images/country/germany.png",
+                    "assets/images/country/indonesia.jpg",
                     width: 30.0,
                     height: 40.0,
                   ),

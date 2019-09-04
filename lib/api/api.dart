@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-//hshdhs
-//APIsds
+
 class CallApi{
-  final String _url = 'http://192.168.0.2/voyce_api/api/';
+  //final String _url = 'http://167.71.196.112:8419/api/';
+  final String _url = 'http://192.168.0.197/voyceapiv1/public/api/';
 
   postData(data, apiUrl) async {
     var fullUrl = _url + apiUrl + await _getToken();
@@ -21,7 +21,6 @@ class CallApi{
         headers: _setHeaders()
     );
   }
-
 
   _setHeaders() => {
     'Content-type' : 'application/json',

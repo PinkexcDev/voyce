@@ -11,7 +11,7 @@ class InputFieldArea extends StatelessWidget {
       padding: EdgeInsets.only(left: 20.0),
       decoration: new BoxDecoration(
         color: Color(0xff42413d),
-      /*  border: new Border(
+        /*  border: new Border(
           bottom: new BorderSide(
             width: 0.3,
             color: Colors.grey,
@@ -24,7 +24,7 @@ class InputFieldArea extends StatelessWidget {
           color: Colors.white,
         ),
         decoration: new InputDecoration(
-      //    border: InputBorder.none,
+          //    border: InputBorder.none,
           //border: ,
           hintText: hint,
           hintStyle: const TextStyle(color: Colors.white, fontSize: 15.0),
