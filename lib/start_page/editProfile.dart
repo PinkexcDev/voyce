@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:app_voyce/api/api.dart';
+import 'package:voyce/api/api.dart';
 import 'package:flutter/material.dart';
-import 'package:app_voyce/start_page/firstpage.dart';
-import 'package:app_voyce/homepage/index.dart';
+import 'package:voyce/start_page/firstpage.dart';
+import 'package:voyce/homepage/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 TextEditingController userNameController = TextEditingController();

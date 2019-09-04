@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_voyce/homepage/recommended_details.dart';
+import 'package:voyce/homepage/recommended_details.dart';
 
 
 class Recommended extends StatefulWidget {

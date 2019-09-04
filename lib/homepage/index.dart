@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:app_voyce/homepage/recommended.dart';
-import 'package:app_voyce/start_page/view_profile.dart';
-import 'package:app_voyce/horizontal_list/categories.dart';
-import 'package:app_voyce/horizontal_list/countries.dart';
+import 'package:voyce/homepage/recommended.dart';
+import 'package:voyce/start_page/view_profile.dart';
+import 'package:voyce/horizontal_list/categories.dart';
+import 'package:voyce/horizontal_list/countries.dart';
 
 class Home extends StatefulWidget {
   final int iduser;

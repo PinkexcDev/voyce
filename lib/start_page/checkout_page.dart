@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:app_voyce/constants/values.dart';
-import 'package:app_voyce/model/cart_model.dart';
-//import 'package:app_voyce/model/food_model.dart';
+import 'package:voyce/constants/values.dart';
+import 'package:voyce/model/cart_model.dart';
+//import 'package:voyce/model/food_model.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 

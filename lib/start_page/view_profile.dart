@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:app_voyce/start_page/firstpage.dart';
-import 'package:app_voyce/start_page/editProfile.dart';
-import 'package:app_voyce/api/api.dart';
+import 'package:voyce/start_page/firstpage.dart';
+import 'package:voyce/start_page/editProfile.dart';
+import 'package:voyce/api/api.dart';
 
 class ViewProfile extends StatefulWidget {
   @override

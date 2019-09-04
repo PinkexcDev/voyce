@@ -1,4 +1,4 @@
-package com.example.voyce_app;
+package com.example.voyce;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

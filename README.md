@@ -1,4 +1,4 @@
-# voyce_app
+# voyce
 
 A new Flutter application.
 

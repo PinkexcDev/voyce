@@ -1,4 +1,4 @@
-name: voyce_app
+name: voyce
 description: A new Flutter application.
 
 # The following defines the version and build number for your application.
@@ -19,15 +19,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_mailer: ^0.4.1+1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  provider: ^3.1.0
+  intl: ^0.15.8
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   font_awesome_flutter: ^8.5.0
   shared_preferences: ^0.5.3+4
   http: 0.12.0+2
@@ -49,36 +52,53 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - assets/images/Asset 58.png
-  - assets/images/Asset 59.png
-  - assets/images/voyce_logo.png
-  - assets/images/download.jpg
-  - assets/images/ig.jpg
-  - assets/images/Voyce_transparent.png
-  - assets/images/Voyce logo.png
-  - assets/images/download (1).jpg
-  - assets/images/Voyce_transparent(1).png
-  - assets/images/Asset 59(1).png
-  - assets/images/Asset 58(1).png
-  - assets/images/my.png
-  - assets/images/us.png
-  - assets/images/uk.png
-  - assets/images/sg.png
-  - assets/images/jp.png
-  - assets/images/japan.png
-  - assets/images/fr.png
-  - assets/images/gr.png
-  - assets/images/country/czech-republic.png
-  - assets/images/country/germany.png
-  - assets/images/country/china.png
-  - assets/images/categories/groceries.png
-  - assets/images/categories/polo-shirt.png
-  - assets/images/categories/clothing.png
-  - assets/images/categories/earrings.png
-  - assets/images/categories/toothbrush.png
-  - assets/images/categories/smartphone.png
-  - assets/images/categories/statue-of-liberty.png
-  - assets/images/categories/basketball.png
+    - assets/images/Asset 58.png
+    - assets/images/Asset 59.png
+    - assets/images/voyce_logo.png
+    - assets/images/download.jpg
+    - assets/images/ig.jpg
+    - assets/images/Voyce_transparent.png
+    - assets/images/Voyce logo.png
+    - assets/images/download (1).jpg
+    - assets/images/Voyce_transparent(1).png
+    - assets/images/Asset 59(1).png
+    - assets/images/Asset 58(1).png
+    - assets/images/my.png
+    - assets/images/us.png
+    - assets/images/uk.png
+    - assets/images/sg.png
+    - assets/images/jp.png
+    - assets/images/japan.png
+    - assets/images/fr.png
+    - assets/images/gr.png
+    - assets/images/country/brazil.png
+    - assets/images/country/indonesia.jpg
+    - assets/images/country/Thailand.png
+    - assets/images/country/korea.png
+    - assets/images/country/spain.png
+    - assets/images/country/czech-republic.png
+    - assets/images/country/germany.png
+    - assets/images/country/china.png
+    - assets/images/country/unitedStates.jpg
+    - assets/images/categories/groceries.jpg
+    - assets/images/categories/polo-shirt.png
+    - assets/images/categories/tuxedo.png
+    #- assets/images/categories/clothing.png
+    - assets/images/categories/dress.png
+    #- assets/images/categories/earrings.png
+    - assets/images/categories/smartwatch.png
+    - assets/images/categories/health.png
+    - assets/images/categories/phone.png
+    #- assets/images/categories/iphone.jpg
+    #- assets/images/categories/smartphone.png
+    - assets/images/categories/statue-of-liberty.png
+    - assets/images/categories/basketball.png
+    - assets/images/products/womanbag.png
+    - assets/images/products/bajuKurung.jpg
+    - assets/images/products/blazzer.png
+    - assets/images/products/polo_shirt.jpg
+  # assets:
+  #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

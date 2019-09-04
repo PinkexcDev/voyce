@@ -2,12 +2,12 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:app_voyce/api/api.dart';
-import 'package:app_voyce/homepage/index.dart';
-import 'package:app_voyce/start_page/sign_up.dart';
-import 'package:app_voyce/start_page/forgot_password.dart';
-import 'package:app_voyce/start_page/verify_number.dart';
-import 'package:app_voyce/style/ensure_visible.dart';
+import 'package:voyce/api/api.dart';
+import 'package:voyce/homepage/index.dart';
+import 'package:voyce/start_page/sign_up.dart';
+import 'package:voyce/start_page/forgot_password.dart';
+import 'package:voyce/start_page/verify_number.dart';
+import 'package:voyce/style/ensure_visible.dart';
 
 class SignIn extends StatefulWidget {
   @override

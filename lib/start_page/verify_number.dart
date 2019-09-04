@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:country_code_picker/country_code.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:app_voyce/api/api.dart';
-import 'package:app_voyce/start_page/sign_in.dart';
-import 'package:app_voyce/style/ensure_visible.dart';
+import 'package:voyce/api/api.dart';
+import 'package:voyce/start_page/sign_in.dart';
+import 'package:voyce/style/ensure_visible.dart';
 
 class VerifyNumber extends StatefulWidget {
   final int iduser;

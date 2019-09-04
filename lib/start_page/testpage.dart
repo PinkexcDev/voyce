@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:voyce_app/start_page/sign_in.dart';
-import 'package:voyce_app/style/ensure_visible.dart';
+import 'package:voyce/start_page/sign_in.dart';
+import 'package:voyce/style/ensure_visible.dart';
 
 class TestPage extends StatefulWidget {
   @override

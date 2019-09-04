@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:app_voyce/start_page/firstpage.dart';
-//import 'package:voyce_app/start_page/firstpage.dart';
+import 'package:voyce/start_page/firstpage.dart';
+//import 'package:voyce/start_page/firstpage.dart';
 
 class CountryOne extends StatefulWidget {
   @override

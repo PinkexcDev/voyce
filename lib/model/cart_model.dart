@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_voyce/model/food_model.dart';
+import 'package:voyce/model/food_model.dart';
 
 class MyCart extends ChangeNotifier {
   List<CartItem> items = [];

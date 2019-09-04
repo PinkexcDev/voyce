@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:app_voyce/start_page/sign_in.dart';
-import 'package:app_voyce/start_page/sign_up.dart';
+import 'package:voyce/start_page/sign_in.dart';
+import 'package:voyce/start_page/sign_up.dart';
 
 class FirstPage extends StatefulWidget {
   @override
